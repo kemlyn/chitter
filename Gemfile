@@ -5,6 +5,7 @@ ruby '2.5.0'
 
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise'
 gem 'formtastic'
@@ -12,6 +13,7 @@ gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2.1'
 gem 'rubocop', require: false
 gem 'sass-rails', '~> 5.0'
+gem 'simple_form'
 gem 'sqlite3'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
