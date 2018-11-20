@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
 
-  resources :users
   resources :posts
 
-  root 'pages#index'
-	get '/home' => 'pages#home'
-	get '/user/:id' => 'pages#profile'
-	get '/explore' => 'pages#explore'
+  root to: 'pages#index'
+  match '/home', to: 'pages#home', via: [:get]
 end

@@ -1,20 +1,8 @@
 <% if !user_signed_in? %>
-<style>
-	body {
-		background: 
-			linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-			url("/bg.jpeg") no-repeat center center fixed;
-			-webkit-background-size: cover;
-			-o-background-size: cover;
-			background-size: cover;
-	}
-</style>
   <%= link_to 'Sign up', new_user_registration_path, class: 'nav-item nav-link' %>
   <%= link_to "Sign in", new_user_session_path, class: 'nav-item nav-link' %>
   <h1>Home page if not signed in</h1>
-  <h2>User Name</h2>
-  <p>@Chitter_handle</p>
-  <h4>Chitter Message that was posted</h4>
+	<%= Post.all %>
 <% else %>
   <script>document.location = "/home" </script>‘
 <% end %>

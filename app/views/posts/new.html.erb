@@ -1,0 +1,13 @@
+<h2>Create a message</h2><hr>
+<%= simple_form_for @post do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :content %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Create' %>
+    <%= link_to "Cancel", :back %>
+  </div>
+<% end %><hr>
