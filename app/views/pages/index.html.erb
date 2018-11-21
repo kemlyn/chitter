@@ -1,8 +1,11 @@
-<% if !user_signed_in? %>
-  <%= link_to 'Sign up', new_user_registration_path, class: 'nav-item nav-link' %>
-  <%= link_to "Sign in", new_user_session_path, class: 'nav-item nav-link' %>
-  <h1>Home page if not signed in</h1>
-	<%= Post.all %>
-<% else %>
-  <script>document.location = "/home" </script>‘
-<% end %>
+<div class="container">
+	<% if !user_signed_in? %>
+		<h1>Home page if not signed in</h1>
+	  <%= link_to 'Sign up', new_user_registration_path, class: 'nav-item nav-link' %>
+	  <%= link_to "Sign in", new_user_session_path, class: 'nav-item nav-link' %>
+		<hr>
+		<p><%= Post.all %></p>
+	<% else %>
+	  <script>document.location = "/home" </script>‘
+	<% end %>
+</div>

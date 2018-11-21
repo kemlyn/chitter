@@ -1,10 +1,13 @@
-<h3>Welcome</h3>
-<p><%= link_to 'Create new post', new_post_path, class: 'nav-item nav-link' %> |
-  <%= link_to "Log out", destroy_user_session_path, method: :delete %> |
-  <%= link_to "Edit profile", edit_user_registration_path %>
-</p>
-<hr>
-<% @posts.each do |post| %>
-  <h4><%= User.find(post.user_id).username %> -<span class="post-time"> Created <%= time_ago_in_words(post.created_at) %> ago</span> </h4>
-  <p><%= post.content %></p> <br>
-<% end %>
+<div class="container">
+  <h1>Welcome</h1>
+  <p><%= link_to 'Create new post', new_post_path, class: 'nav-item nav-link' %> |
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %> |
+    <%= link_to "Edit profile", edit_user_registration_path %>
+  </p>
+  <hr>
+  <% @posts.each do |post| %>
+    <h4><%= User.find(post.user_id).username %> -<span class="post-time"> Created <%= time_ago_in_words(post.created_at) %> ago</span> </h4>
+    <h6><%= User.find(post.user_id).handle %></h6>
+    <p><%= post.content %></p> <br>
+  <% end %>
+</div>
