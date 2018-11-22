@@ -1,13 +1,19 @@
 <div class="container">
-  <h1>Welcome</h1>
-  <p><%= link_to 'Create new post', new_post_path, class: 'nav-item nav-link' %> |
+  <h1>Welcome <%= current_user.username %></h1>
+  <p><%= link_to 'Create new post', new_post_path %> |
     <%= link_to "Log out", destroy_user_session_path, method: :delete %> |
     <%= link_to "Edit profile", edit_user_registration_path %>
   </p>
-  <hr>
+  <hr style="border: none; border-bottom: 1px solid black;">
   <% @posts.each do |post| %>
     <h4><%= User.find(post.user_id).username %> -<span class="post-time"> Created <%= time_ago_in_words(post.created_at) %> ago</span> </h4>
-    <h6><%= User.find(post.user_id).handle %></h6>
-    <p><%= post.content %></p> <br>
+    <h5><%= User.find(post.user_id).handle %></h5>
+    <p><%= post.content %></p>
+    <%= link_to 'Show comments', post_path(post.id)%> |
+    <%= link_to 'Add comment', new_post_comment_path(post.id)%>
+    <% if User.find(post.user_id).username == current_user.username %> |
+      <%= link_to "Delete", destroy_post_path, method: :delete %> |
+      <%= link_to 'Edit post', edit_post_path(post.id)%>
+    <% end %><br> <br>
   <% end %>
 </div>

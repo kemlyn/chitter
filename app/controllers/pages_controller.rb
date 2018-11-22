@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
-  def index; end
+  def index
+    @posts = Post.all
+  end
 
   def home
     @posts = Post.all

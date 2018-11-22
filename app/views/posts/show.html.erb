@@ -1,0 +1,15 @@
+<div class="container">
+  <h2><%= @post.content %></h2>
+  <%= link_to 'Add comment', new_post_comment_path(@post.id)%>
+  <hr style="border: none; border-bottom: 1px solid black;">
+   <div id='comments'>
+    <% @post.comments.each do |comment|%>
+    <div class='comment'>
+      <p><%= comment.body %></p>
+      <small><%= distance_of_time_in_words_to_now comment.created_at %> ago.</small>
+      <%= link_to 'Delete', post_comment_path(@post.id), method: :delete %>
+      <hr>
+    </div>
+    <% end %>
+  </div>
+</div>

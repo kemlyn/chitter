@@ -27,27 +27,29 @@
 
 ## Challenge
 
-We are going to write a small Twitter clone that will allow users to post messages to a public stream.
+We are going to write a small Twitter clone that will allow users to post posts to a public stream.
 
 ---
 
-## Story points
+## Done
 
 ```
-As a Maker
-I want to post a message to chitter
-I want see what others are saying  
-I want to see all messages in reverse chronological order
-I want to see the time at which it was made
-I want to sign up for Chitter
-I want to log in to Chitter
-I want to log out of Chitter
+I can post and edit a post on chitter
+I can see what others are saying  
+I can comment on other peoples posts
+I can see all posts in reverse chronological order
+I can see the time at which a post was made
+I can sign up for Chitter
+I can log in to Chitter
+I can log out of Chitter
+I can sign up to Chitter with my email, password, handle and a username
+I don't have to be logged in to see the posts
+My username and email are unique
 ```
 ---
 
-### Notes
-
-* You don't have to be logged in to see the messages.
-* Users sign up to chitter with their email, password, name and a username
-* The username and email are unique.
-* Messages (posts to chitter) have the name of the user and their user handle.
+## TODO
+```
+I can delete comments
+I can delete my own post
+```
