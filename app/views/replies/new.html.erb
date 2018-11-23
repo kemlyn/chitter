@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Reply to a comment</h2>
+  <hr style="border: none; border-bottom: 1px solid black;">
+  <%= simple_form_for @reply, url: post_comment_replies_path do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :body %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, 'Create' %>
+      <%= link_to "Cancel", :back %>
+    </div>
+  <% end %><hr>
+</div>

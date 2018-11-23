@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   }
 
   resources :posts do
-    resources :comments, only: %i[new create destroy]
+    resources :comments, only: %i[new create destroy] do
+      resources :replies, only: %i[new create destroy]
+    end
   end
 
   root to: 'pages#index'

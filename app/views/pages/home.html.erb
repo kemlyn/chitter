@@ -4,7 +4,7 @@
     <%= link_to "Log out", destroy_user_session_path, method: :delete %> |
     <%= link_to "Edit profile", edit_user_registration_path %>
   </p>
-  <hr style="border: none; border-bottom: 1px solid black;">
+  <hr style="border: none; border-bottom: 1px solid grey;">
   <% @posts.each do |post| %>
     <h4><%= User.find(post.user_id).username %> -<span class="post-time"> Created <%= time_ago_in_words(post.created_at) %> ago</span> </h4>
     <h5><%= User.find(post.user_id).handle %></h5>
