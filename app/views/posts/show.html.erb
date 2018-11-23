@@ -1,15 +1,29 @@
 <div class="container">
   <h2><%= @post.content %></h2>
-  <%= link_to 'Add comment', new_post_comment_path(@post.id)%>
+  <%= link_to 'Back', :back %>
   <hr style="border: none; border-bottom: 1px solid black;">
    <div id='comments'>
     <% @post.comments.each do |comment|%>
     <div class='comment'>
-      <p><%= comment.body %></p>
-      <small><%= distance_of_time_in_words_to_now comment.created_at %> ago.</small>
-      <%= link_to 'Delete', post_comment_path(@post.id), method: :delete %>
-      <hr>
+      <h4><%= User.find(comment.user_id).username %> -<span class="post-time"> Created <%= time_ago_in_words(comment.created_at) %> ago</span> </h4>
+      <p><%= comment.body %></p><hr>
     </div>
     <% end %>
   </div>
+  <% if user_signed_in? %>
+    <h2><%= @post.content %></h2>
+    <%= link_to 'Add comment', new_post_comment_path(@post.id)%> |
+    <%= link_to 'Back', :back %>
+    <hr style="border: none; border-bottom: 1px solid black;">
+     <div id='comments'>
+      <% @post.comments.each do |comment|%>
+      <div class='comment'>
+        <h4><%= User.find(comment.user_id).username %> -<span class="post-time"> Created <%= time_ago_in_words(comment.created_at) %> ago</span> </h4>
+        <p><%= comment.body %></p>
+        <%= link_to 'Delete', post_comment_path(@post, comment), method: :delete %> |
+        <hr>
+      </div>
+      <% end %>
+    </div>
+  <% end %>
 </div>

@@ -7,8 +7,9 @@ class CommentsController < ApplicationController
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.new(comment_params)
+    @comment.user_id = current_user.id
     if @comment.save
-      redirect_to post_path
+      redirect_to home_path
     else
       flash[:notice] = 'Unable to comment on this post'
       render :new
@@ -25,6 +26,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:post_id, :body)
+    params.require(:comment).permit(:post_id, :body, :user_id)
   end
 end

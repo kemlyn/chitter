@@ -12,7 +12,7 @@
     <%= link_to 'Show comments', post_path(post.id)%> |
     <%= link_to 'Add comment', new_post_comment_path(post.id)%>
     <% if User.find(post.user_id).username == current_user.username %> |
-      <%= link_to "Delete", destroy_post_path, method: :delete %> |
+      <%= link_to "Delete", post_path(post.id), method: :delete %> |
       <%= link_to 'Edit post', edit_post_path(post.id)%>
     <% end %><br> <br>
   <% end %>

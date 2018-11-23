@@ -24,6 +24,14 @@
 
 ```
 ---
+# Getting Started
+
+1. Fork this repo
+2. Bundle install
+3. Start the server (rails s)
+4. In your broswer http://localhost:3000
+
+---
 
 ## Challenge
 
@@ -42,7 +50,8 @@ I can see the time at which a post was made
 I can sign up for Chitter
 I can log in to Chitter
 I can log out of Chitter
-I can sign up to Chitter with my email, password, handle and a username
+I can delete comments
+I can delete my own post
 I don't have to be logged in to see the posts
 My username and email are unique
 ```
@@ -50,6 +59,5 @@ My username and email are unique
 
 ## TODO
 ```
-I can delete comments
-I can delete my own post
+I can reply to comments
 ```
